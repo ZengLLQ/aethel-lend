@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aethellend"
+version = "0.1.0"
+description = "Decentralized Lending & Over-Collateralized Money Market Protocol with Dynamic Kinked Interest Rates"
+readme = "README.md"
+authors = [{ name = "ZengLLQ" }]
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.0.0",
+    "cryptography>=41.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+aethellend = "aethellend.cli:cli"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
